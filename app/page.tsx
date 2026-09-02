@@ -1,0 +1,31 @@
+'use client';
+
+type CaseItem = {
+  id: string; kicker: string; title: string; period: string; summary: string;
+  stats: [string, string][]; bullets: { title: string; text: string }[]; tone: string;
+};
+
+const cases: CaseItem[] = [
+  { id:'campaign', kicker:'母婴护理 · 小红书内容孵化', title:'Ms. Chu', period:'2025.07 — 2026.07', tone:'amber', summary:'围绕真实护理经验建立内容方向，联动香港及内地达人，让专业信息以更可信、更生活化的方式被用户看见。', stats:[['220万+','总曝光'],['33万+','总阅读'],['3.3万+','总互动'],['100+','达人合作']], bullets:[{title:'达人合作推广',text:'筛选与品牌调性高度适配的母婴、敏感肌垂类达人，推进真实体验内容与深度视频合作。'},{title:'痛点内容策划',text:'围绕湿疹护理三件套、天然有机等卖点，策划真实体验和场景化内容。'},{title:'数据优化',text:'持续进行内容 A/B Test，推动单条笔记平均互动提升 20%。'}]},
+  { id:'global', kicker:'香港古着 · 小红书内容推广', title:'美之时装', period:'2025.09 — 2026.06', tone:'green', summary:'围绕香港中古服装与高性价比特色，通过生活方式、时尚穿搭达人合作及优质内容投流，持续提升品牌曝光与用户种草效率。', stats:[['OOTD','核心内容'],['付费＋投流','合作模式'],['香港','本地场景'],['持续','创意输出']], bullets:[{title:'达人合作推广',text:'筛选生活方式、时尚穿搭类达人，以付费合作与优质内容投流强化品牌曝光。'},{title:'创意内容输出',text:'围绕 OOTD、中古单品搭配与低价淘好物，持续策划多元创意主题。'}]},
+  { id:'lifestyle', kicker:'经典重塑 · 香港年轻化传播', title:'Esprit', period:'品牌内容焕新', tone:'blue', summary:'围绕「Rewrite the Classic」理念，将品牌历史、香港城市记忆与 Gen Z 生活方式重新连接，建立年轻化、本地化的新媒体内容体系。', stats:[['3大','内容模块'],['双平台','内容矩阵'],['香港','本地叙事'],['KOL/KOC','精准合作']], bullets:[{title:'品牌内容构建',text:'梳理品牌历史与核心价值，建立年轻化、本地化的内容定位。'},{title:'品牌新媒体矩阵',text:'规划 Instagram 与小红书的差异化内容及互动共创机制。'},{title:'品牌内容投放',text:'以阶段性传播链路和精准达人合作推动品牌认知与种草。'}]},
+];
+
+export default function Home(){
+  return <main>
+    <header className="siteNav"><a className="logo" href="#top">jiahua<span>.</span></a><nav><a href="#about">关于</a><a href="#work">品牌</a><a href="#tools">工具</a><a href="#skills">技能</a><a href="#contact">联系</a></nav><a className="outlineBtn" href="mailto:ryanliu200212@gmail.com">联系我</a></header>
+
+    <section className="cover paper" id="top"><div className="grain"/><div className="coverCore"><p className="tinyRule">刘家华 / LIU JIAHUA</p><h1>port<span>folio</span></h1><h2>个人作品集</h2><p>KOL 运营 · 内容增长 · 用户运营</p><a href="#about" className="primaryBtn">点我进入 <b>↘</b></a></div><span className="doodle d1">♥</span><span className="doodle d2">✦</span><span className="cornerNote">深圳 · 广州 / 2026</span></section>
+
+    <section className="about paper section" id="about"><div className="grain"/><div className="aboutCopy"><span className="eyebrow">刘家华 / JIAHUA LIU</span><h2>刘家华</h2><h3>KOL 运营 · 用户运营</h3><p>专注小红书、Instagram 与 TikTok，从内容策略、达人邀约到发布复盘，并进行用户运营，让品牌与创作者的合作更真实、更清楚，也更有效。</p><div className="tagRow"><span>达人运营</span><span>用户分层</span><span>内容策划</span><span>生命周期运营</span><span>数据复盘</span></div><div className="aboutActions"><a href="#work" className="primaryBtn">查看品牌 →</a><a href="mailto:ryanliu200212@gmail.com" className="outlineBtn">联系我</a></div></div><div className="photoDesk"><div className="tape"/><figure className="polaroid mainPhoto"><img src="/profile-duck.jpg" alt="戴着眼镜在电脑前工作的小黄鸭头像"/><figcaption>jiahua :)</figcaption></figure><div className="noteCard"><b>what I do</b><span>内容策划</span><span>达人协作</span><span>用户运营</span></div></div></section>
+
+    <section className="work paper section" id="work"><div className="grain"/><div className="workHead"><div><span className="eyebrow">BRANDS I WORKED WITH</span><h2>服务过的品牌</h2><i/></div><p>覆盖护理、服装赛道，负责达人筛选、内容协作、发布跟进与数据复盘。<b>点击品牌卡片查看案例 →</b></p></div><div className="caseCards">{cases.map((item,index)=><a className={`caseCard ${item.tone}`} key={item.id} href={`/case/${item.id}`}><span className="tape"/><div className={`visualCollage ${index===0?'brandLogoCover':''}`}>{index===0?<img src="/cases/mschu-cover.png" alt="Ms. Chu Soap & Beaut 品牌标志"/>:<><span className="mockPost p1">CONTENT</span><span className="mockPost p2">{index===1?'BEAUTY':'TIKTOK'}</span><span className="mockPost p3">{index===2?'LIFESTYLE':'GROWTH'}</span></>}</div><small>{item.kicker}</small><h3>{item.title}</h3><p>{item.period}</p><div className="quickStats">{item.stats.slice(0,2).map(s=><span key={s[1]}><b>{s[0]}</b>{s[1]}</span>)}</div><em>点击查看完整案例 ↗</em></a>)}</div></section>
+
+    <section className="tools paper section" id="tools"><div className="grain"/><div className="toolsCopy"><span className="eyebrow">OPERATIONS TOOLKIT</span><h2>运营工具建设</h2><p>我参与搭建博主接单平台与达人邀约工具，将重复的沟通流程转化为清晰、可复用的运营系统。</p><div className="toolStats"><span><b>700+</b>达人资源池</span><span><b>5</b>主流内容平台</span><span><b>AARRR</b>用户分层模型</span></div><a href="/case/product" className="primaryBtn">查看工具案例 →</a></div><div className="toolBoard"><div className="tape"/><div className="flowRow"><span>筛选</span><i>→</i><span>邀约</span><i>→</i><span>审核</span><i>→</i><span>发布</span></div><div className="toolCards"><article><small>01</small><b>达人池</b><p>分层、标签与合作记录</p></article><article><small>02</small><b>项目页</b><p>节点、内容与状态同步</p></article><article><small>03</small><b>反馈闭环</b><p>试用、定位与功能迭代</p></article></div></div></section>
+
+    <section className="skills paper section" id="skills"><div className="grain"/><div className="skillsHead"><span className="eyebrow">PROFESSIONAL SKILLS</span><h2>专业技能</h2><p>我把运营能力拆成三个真实工作中的核心模块。</p></div><div className="skillNotes"><article><span>01</span><h3>内容策略与增长</h3><small>从洞察到内容落地</small><ul><li>平台语境与用户需求判断</li><li>A/B Test 与内容数据复盘</li><li>品牌表达与达人内容平衡</li></ul></article><article><span>02</span><h3>全域创作者运营</h3><small>跨平台、跨文化协作</small><ul><li>小红书 / TikTok / Instagram</li><li>达人挖掘、邀约与分层维系</li><li>脚本、审核、履约与复盘</li></ul></article><article><span>03</span><h3>项目与工具建设</h3><small>把经验沉淀成系统</small><ul><li>多项目并行与节点推进</li><li>SOP、达人池和协作流程</li><li>Codex / Claude / Manus</li></ul></article></div></section>
+
+    <footer className="contact paper" id="contact"><div className="grain"/><span className="eyebrow">GET IN TOUCH</span><h2>THANK YOU</h2><p>如果你的团队正在寻找一位懂内容与达人合作，也有用户分层、激活与留存实践的运营伙伴，欢迎联系我。期待与你聊聊 KOL 运营或用户运营的工作机会，一起把用户反馈变成具体改进，让一次参与发展为持续合作。</p><div className="contactCards"><a href="mailto:ryanliu200212@gmail.com"><b>EMAIL</b>ryanliu200212@gmail.com</a><span><b>BASED IN</b>深圳 / 广州</span></div><a className="primaryBtn" href="mailto:ryanliu200212@gmail.com">联系我 →</a><div className="copyright">© 2026 Liu Jiahua · KOL &amp; User Operations</div></footer>
+
+  </main>
+}
