@@ -12,7 +12,7 @@ export default function ToolCase(){
 
     <section id="alliance" className="toolChapter">
       <header className="chapterHeading"><div><span className="eyebrow">平台运营 · AI 辅助迭代</span><h2>创作者联盟</h2></div><div className="chapterMeta"><span>2026.03 — 2026.07</span><span>已开放使用 · 博主端 / 公司运营端</span></div></header>
-      <div className="toolOverview"><p>将分散的资料收集与项目报名集中到网站：博主注册后，复用社交账号和联系方式完成报名，后续在平台交稿、申请结款。原先设想的品牌端尚未开展。</p><div className="registered"><strong>700+</strong><span>累计注册博主<br/><small>注册人数，不代表活跃或合作人数</small></span></div></div>
+      <div className="toolOverview"><p>将分散的资料收集与项目报名集中到网站：博主注册后，复用社交账号和联系方式完成报名，后续在平台交稿、申请结款。原先设想的品牌端尚未开展。</p><div className="registered"><strong>1000+</strong><span>累计注册博主<br/><small>注册人数，不代表活跃或合作人数</small></span></div></div>
       <figure className="toolScreenshot"><a href="/cases/creator-alliance-redacted.png" target="_blank" rel="noreferrer"><img src="/cases/creator-alliance-redacted.png" alt="创作者联盟通告广场，项目封面、品牌名称和通告标题已遮盖"/></a><figcaption>通告广场 · 基于原截图进行脱敏编辑，封面、品牌名称及通告标题已遮盖。点击查看大图。</figcaption></figure>
 
       <div className="toolTwoCols">
@@ -30,7 +30,7 @@ export default function ToolCase(){
       </div></section>
 
       <section className="toolTwoCols toolBlock">
-        <article className="toolPaper"><span className="eyebrow">IN USE / 实际使用</span><h3>已有真实合作流程在平台完成</h3><p>平台已向博主和公司运营开放，累计注册博主 700+，主要来自小红书、Instagram 与抖音。报名、交稿和申请结款已应用于真实项目。</p><p>把基础资料从“一次报名的记录”变为可持续维护的资源，是这项工具的长期价值。</p></article>
+        <article className="toolPaper"><span className="eyebrow">IN USE / 实际使用</span><h3>已有真实合作流程在平台完成</h3><p>平台已向博主和公司运营开放，累计注册博主 1000+，主要来自小红书、Instagram 与抖音。报名、交稿和申请结款已应用于真实项目。</p><p>把基础资料从“一次报名的记录”变为可持续维护的资源，是这项工具的长期价值。</p></article>
         <article className="toolPaper nextIdea"><span className="toolStatus">后续方向 · 尚未上线</span><h3>降低注册阻力与信任顾虑</h3><p>通过企业微信、微信和接单群，我了解到部分香港博主认为注册复杂，对网站安全与隐私存在顾虑，甚至因此放弃合作。</p><p>我提出微信小程序及微信一键登录方向，并获得老板认可；因公司资质资料和预算尚未落实，暂未上线。能否缓解这些问题，仍需后续验证。</p></article>
       </section>
     </section>
